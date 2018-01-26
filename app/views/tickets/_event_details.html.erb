@@ -1,0 +1,42 @@
+<div >
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Artist:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= event.artist %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Price_max:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= event.price_high %>$
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Price_min:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= event.price_low %>$
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Date:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= event.event_date %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Seats_available:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= event.max_places.to_i - event.seats_taken.to_i %>/<%= event.max_places %>
+    </div>
+  </div>
+</div>

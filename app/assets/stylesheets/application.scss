@@ -1,0 +1,38 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-datepicker";
+
+.main_menu {
+  width : 500px;
+  margin: auto;
+}
+
+.list-group-item {
+  margin: 2px;
+}
+
+.buttons{
+  width : 500px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.event_details{
+  font-size: 20px;
+}
+
+.ticket_details{
+  font-size: 20px;
+}
+
+.hide_show{
+  display: none;
+}
+
+.float_right{
+  float:right
+}
+
+.float_left{
+  float:left
+}

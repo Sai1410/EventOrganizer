@@ -1,0 +1,24 @@
+
+<div class="container panel">
+  <div class="form-inline ">
+    <%= form_tag events_path, style:'display:inline;', method: 'get' do %>
+      Filter by date from:
+      <%= text_field_tag :event_date_from, params[:event_date_from], :id => "datepicker1", class: 'form-control'  %>
+      to:
+      <%= text_field_tag :event_date_to, params[:event_date_to], :id => "datepicker2", class: 'form-control'  %>
+      <%= submit_tag "Filter", :event_date => nil, :class => 'btn btn-default'  %>
+    <% end %>
+    <button id="clear_form" class="btn btn-default"> Clear Filter </button>
+
+  </div>
+
+</div>
+
+<script>
+    $('#datepicker1').datepicker({format: 'yyyy-mm-dd'});
+    $('#datepicker2').datepicker({format: 'yyyy-mm-dd'});
+    $("#clear_form").on("click", function() {
+        $("#datepicker1").val("");
+        $("#datepicker2").val("");
+    });
+</script>

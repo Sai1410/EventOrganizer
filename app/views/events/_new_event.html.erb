@@ -1,0 +1,71 @@
+<div class="row">
+  <%= form_with(model: event, local: true) do |form| %>
+    <% if event.errors.any? %>
+      <div id="error_explanation" class="panel panel-default">
+        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+        <ul>
+          <% event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="col-sm-8">
+      <div class="row form-group">
+        <div class="col-sm-4 ">
+          <%= form.label :artist%>
+        </div>
+        <div class="col-sm-4">
+          <%= form.text_field :artist, id: :event_artist, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-4 ">
+          <%= form.label :description%>
+        </div>
+        <div class="col-sm-4">
+          <%= form.text_area :description, id: :event_description, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-4 ">
+          <%= form.label :price_max%>
+        </div>
+        <div class="col-sm-4">
+          <%= form.text_field :price_high, id: :event_price_high, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-4 ">
+          <%= form.label :price_min%>
+        </div>
+        <div class="col-sm-4">
+          <%= form.text_field :price_low, id: :event_price_low, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-4 ">
+          <%= form.label :event_date%>
+        </div>
+        <div class="col-sm-4">
+          <%= form.text_field :event_date, :id => "datepicker", :value => Date.today, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-sm-4 ">
+          <%= form.label :max_number_of_places%>
+        </div>
+        <div class="col-sm-4">
+          <%= form.text_field :max_places, id: :event_max_places, class: 'form-control' %>
+        </div>
+      </div>
+      <%= form.submit 'Create Event', :class => 'btn btn-default' %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+    $('#datepicker').datepicker({format: 'yyyy-mm-dd'});
+</script>

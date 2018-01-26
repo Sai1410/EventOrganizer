@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="page-header"><strong>New Ticket</strong></h1>
+  <div class="row">
+    <div class="col-sm-8">
+
+      <%= render "new_ticket", ticket: @ticket, events: Event.all %>
+      <div class="text-center">
+        <%= link_to 'Go Back', tickets_path, class:'btn btn-default' %>
+      </div>
+
+    </div>
+    <div class="col-sm-4 panel panel-default">
+      <h2 class="page-header"> Event Details</h2>
+      <%= render "events_list", events: Event.all %>
+    </div>
+  </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TicketApp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class = "navbar navbar-inverse ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Event Organisation Application</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class="navbar-text"> Logged in as <strong><%= current_user.email %></strong> </li>
+          <li class="navbar-text"><strong><%= current_user.money %></strong> $</li>
+          <li> <%= link_to 'GetMoney', "/users/get_money" %></li>
+          <li><a <%= link_to 'Edit profile', edit_user_registration_path %></a></li>
+          <li><a <%= link_to "Logout", destroy_user_session_path, method: :delete %></a></li>
+        <% else %>
+          <li><a <%= link_to "Sign up", new_user_registration_path %></a></li>
+          <li><a <%= link_to "Login", new_user_session_path %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %><p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  <%= yield %>
+
+  </body>
+</html>

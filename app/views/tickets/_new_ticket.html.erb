@@ -1,0 +1,76 @@
+<%= form_with(model: @ticket, local: true) do |form| %>
+  <div class="row form-group">
+    <div class="col-sm-4 text-center">
+      <%= form.label :event_id%>
+    </div>
+    <div class="col-sm-8 dropdown">
+      <% options = options_from_collection_for_select(events, 'id', 'artist') %>
+      <%= form.select :event_id , options , { :include_blank => "Please select event"}, {:class => "form-control"} %>
+    </div>
+  </div>
+
+
+  <div class="row form-group">
+    <div class="col-sm-4 text-center">
+      <%= form.label :name%>
+    </div>
+    <div class="col-sm-8">
+      <%= form.text_field :name, id: :ticket_name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-4 text-center">
+      <%= form.label :seat_id_seq%>
+    </div>
+    <div class="col-sm-8">
+      <%= form.text_field :seat_id_seq, id: :ticket_seat_id_seq, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-4 text-center">
+      <%= form.label :address%>
+    </div>
+    <div class="col-sm-8">
+      <%= form.text_field :address, id: :ticket_address, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-4 text-center">
+      <%= form.label :'Price ($)'%>
+    </div>
+    <div class="col-sm-8">
+      <%= form.text_field :price, id: :ticket_price, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-4 text-center">
+      <%= form.label :email_address%>
+    </div>
+    <div class="col-sm-8">
+      <%= form.text_field :email_address, id: :ticket_email_address, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-4 text-center">
+      <%= form.label :phone%>
+    </div>
+    <div class="col-sm-8">
+      <%= form.text_field :phone, id: :ticket_phone, class: 'form-control' %>
+    </div>
+  </div>
+  <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+        <% @ticket.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row text-center">
+    <%= form.submit 'Create Ticket', :class => 'btn btn-default' %>
+  </div>
+
+<% end %>

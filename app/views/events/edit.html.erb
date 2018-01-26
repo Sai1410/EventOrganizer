@@ -1,0 +1,8 @@
+<div class ="container">
+  <h1 class="page-header">Editing Event</h1>
+
+
+  <%= render 'new_event', event: @event %>
+  <%= link_to 'Delete', @event, method: :delete, data: { confirm: 'Are u sure?' }, class:'btn btn-default'  %>
+  <%= link_to 'Back', events_path, class:'btn btn-default' %>
+</div>

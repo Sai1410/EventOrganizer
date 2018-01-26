@@ -1,0 +1,58 @@
+<div class="ticket_details">
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Name:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= @ticket.name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Seat id seq:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= @ticket.seat_id_seq %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Address:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= @ticket.address %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Price:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= @ticket.price %>$
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Email address:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= @ticket.email_address %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Phone Number:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= @ticket.phone %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Event:</strong>
+    </div>
+    <div class="col-sm-4">
+      <%= @ticket.event.artist %>
+    </div>
+  </div>
+</div>

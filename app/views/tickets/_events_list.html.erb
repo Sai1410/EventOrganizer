@@ -1,0 +1,8 @@
+<% events.each do |event| %>
+  <button class = "list-group-item btn btn-default" onclick="toggle(<%= event.id.to_s %>)">
+    <%= event.artist %>
+  </button>
+  <div class="hide_show" id=<%= event.id.to_s %> >
+    <%= render "event_details", event:event %>
+  </div>
+<% end %>

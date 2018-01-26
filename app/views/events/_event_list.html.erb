@@ -1,0 +1,20 @@
+<div class ="list-group main_menu">
+
+  <% @events.each do |event| %>
+    <% if event.event_date %>
+    <div class="list-group-item">
+      <div class="row">
+        <div class="col-sm-4">
+          <%= event.artist %>
+        </div>
+        <div class="col-sm-4">
+          <%= event.event_date%>
+        </div>
+        <div class="col-sm-4">
+          <%= link_to 'Show', event, class:'btn btn-default'%>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
